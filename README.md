@@ -7,7 +7,6 @@ This project will involve developing two types of models:
 
 ### Type A: AI-Driven Models <br />
   Physics-Informed Neural Networks (PINNs) <br />
-  Supervised learning models (e.g., fully connected neural networks) <br />
   Long Short-Term Memory networks (LSTM) <br />
 
 ### Type B: Traditional Numerical Methods <br />
@@ -21,15 +20,18 @@ These approaches will allow for a detailed comparison between state-of-the-art A
 
 Develop a Pricing Model for European Options: 
 
-#### 1.Implement and evaluate both AI-based and traditional numerical methods for pricing European options. 
+#### 1.Combine the traditional numerical methods and RNN for analyzing time serier with PINN and Q-learning for pricing European options. 
 This includes implementing Black-Scholes as a benchmark model. <br />
-#### 2.Risk Management Metrics: 
-Calculate Greeks (Delta, Gamma, Vega, Theta, and Rho) to quantify sensitivities and potential risk factors for options portfolios. Both AI and traditional models will be used for sensitivity analysis. <br />
-#### 3.Model Comparison and Evaluation: 
-Conduct comparative analysis based on: <br />
- . Accuracy of price predictions<br />
- . Computational efficiency (e.g., speed and resource consumption)<br />
- . Scalability to larger datasets or complex market environments<br />
+##### 1.a. Finding trends, seasonality and forcasting using ARIMA models,
+Download, preprocess the data, and try to forecast the future Stock prices. Asses the validity of ARIMA models. <br />
+##### 1.b. Use Recurrent Neural Nets for stock price forecasting.
+We will specifically use LSTM and GRU models.
+##### 1.c. Check for volatility clustering.
+Check whether the volatilities are propagating in time or they are just constants. This data used in geometrical Brownian motion to provide the third way for stock price forecasting. <br />
+#### 2.Risk Management Metrics and Implied Volatility using PINN: 
+Calculate Greeks (Delta, Gamma, Vega, Theta, and Rho) to quantify sensitivities and potential risk factors for options portfolios. <br />
+#### 3.Implement the Fitted Q-Itteration for finding fair option price: 
+The works of Igor Halberin (arXiv:1712.04609) is used to find the effect of volatility backpropagation in Option pricing. <br/>
 #### 4.GitHub Documentation and Visualization: <br />
 Ensure all code, results, and documentation are well-structured for easy navigation on GitHub. Include visualizations to illustrate the performance and comparison of models.
 
@@ -37,16 +39,12 @@ Ensure all code, results, and documentation are well-structured for easy navigat
 
 ### Type A: AI-Driven Models <br />
 #### .PINNs: 
-Implement a PINN to solve the Black-Scholes partial differential equation (PDE). PINNs will leverage the known physics underlying the option pricing formula to enhance learning accuracy and stability.<br />
-#### .Supervised Learning Models: 
-Train supervised neural networks on historical option price data, aiming to approximate the pricing function based on historical volatility, underlying asset price, and other key variables. <br />
-#### .LSTM Networks: 
-Use LSTM networks for time-series predictions of underlying asset prices, which feed into the option pricing models for more dynamic, forward-looking pricing.<br />
+Implement a PINN to solve the Black-Scholes partial differential equation (PDE). PINNs will leverage the known physics underlying the option pricing formula to enhance learning accuracy and stability. In addition, one can use PINN's inverse parameter solving methods to find the implied volatility. On the other hand, PINN can be used to solve Black-Sholdes equation for non-constant paramters. <br />
+#### .RNN Networks: 
+Use RNN networks (LSTM and GRU layers) for time-series predictions of underlying asset prices, which feed into the option pricing models for more dynamic, forward-looking pricing.<br />
 ### Type B: Traditional Numerical Methods
 #### .Monte Carlo Simulation: 
 Develop a Monte Carlo simulation for European options, simulating multiple paths for the underlying asset and averaging the resulting option prices.
-#### .Finite Difference Methods: 
-Implement finite difference methods to approximate the solution to the Black-Scholes PDE numerically.
 #### .Time Series Analysis: 
 Apply time series models (e.g., ARIMA, GARCH) to forecast volatility and price trends, enhancing the reliability of traditional option pricing methods.
 
@@ -54,11 +52,11 @@ Apply time series models (e.g., ARIMA, GARCH) to forecast volatility and price t
 
 The project will be structured as follows:
 
-1. Data Collection & Preprocessing: Acquire historical options data and preprocess for both training and evaluation. Use open datasets (such as Yahoo Finance or Quandl).
+1. Data Collection & Preprocessing: Acquire historical options data and preprocess for both training and evaluation. Use open datasets (such as Yahoo Finance).
 2. Model Development:
-AI Models (PINNs, Supervised Neural Networks, LSTMs)
+AI Models (PINNs, RNNs, Q-learning)
 Traditional Models (Monte Carlo, Finite Difference, Time Series)
-3. Model Comparison: Analyze and compare the performance of AI-based and traditional models in terms of accuracy, computational cost, and reliability.
+
 4. Results Visualization: Create visualizations for price predictions, sensitivity metrics (Greeks), and performance comparison.
 5. Documentation and GitHub Portfolio: Ensure all code is modular, well-documented, and complemented with a project overview, model explanations, and instructions for reproducibility.
 
