@@ -2,9 +2,9 @@
 
 ## 0. Resources
 
-The python notebook files can be found in notebook folder. All of the details are explained there.
-Streamlit deployed code: https://finance-zhoaxd2tyvnpax6w3dgt6q.streamlit.app/  (It is significantly slower relative to the local deployement)
-For local streamlit deployment, download the all files and the folder "Project", and in the terminal use this command:  local-directory> streamlit run main.py  
+The python notebook files can be found in notebook folder. All of the details are explained there.<br/>
+Streamlit deployed code: https://finance-zhoaxd2tyvnpax6w3dgt6q.streamlit.app/  (It is significantly slower relative to the local deployement) <br />
+For local streamlit deployment, download the all files and the folder "Project", and in the terminal use this command:  local-directory> streamlit run main.py  <br />
 
 ## 1. Project Overview
 
