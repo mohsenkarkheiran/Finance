@@ -1,4 +1,11 @@
 # European Options Pricing and Risk Management Using AI-Driven Models and Traditional Numerical Methods
+
+## 0. Resources
+
+The python notebook files can be found in notebook folder. All of the details are explained there.
+Streamlit deployed code: https://finance-zhoaxd2tyvnpax6w3dgt6q.streamlit.app/  (It is significantly slower relative to the local deployement)
+For local streamlit deployment, download the all files and the folder "Project", and in the terminal use this command:  local-directory> streamlit run main.py  
+
 ## 1. Project Overview
 
 The aim of this project is to develop a comprehensive solution for pricing European options and managing associated financial risks by integrating advanced AI models and traditional numerical methods. European options are financial derivatives with significant importance in modern financial markets, and accurately pricing these instruments is crucial for effective risk management.
