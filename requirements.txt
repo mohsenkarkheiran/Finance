@@ -1,7 +1,7 @@
 numpy==1.26.4
 scipy==1.15.1
 protobuf==3.20.3
-streamlit==0.76.0
+streamlit==1.40.1
 scikit-learn == 1.0.1
 pandas==2.2.2
 joblib==1.1.1
